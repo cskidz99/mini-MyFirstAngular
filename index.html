@@ -6,7 +6,8 @@
 	</head>
 	<body ng-controller="mainCtrl">
     <h1>My Friends</h1>
-      <div ng-repeat="friend in friends track by $index">
+      Filter by: <input ng-model='filterby'/>
+      <div ng-repeat="friend in friends | filter: filterby track by $index">
         <p ng-click='removeFriend(friend)'> {{friend}} </p>
       </div>
         <form ng-submit='addFriend(name)'>
